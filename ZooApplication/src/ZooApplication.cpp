@@ -3,7 +3,6 @@
 // Author      : Rafael Moreira & Tiago Oliveira
 // Version     :
 // Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
 //============================================================================
 
 #include <iostream>
@@ -14,7 +13,7 @@ int main() {
 
 	Zoo zoo("Quinta");
 
-	cout << zoo.getName() << endl; // prints !!!Hello World!!!
+	cout << zoo.getName() << endl;
 
 	return 0;
 }

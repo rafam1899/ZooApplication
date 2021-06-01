@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+ZooApplication/.settings/language.settings.xml
+ZooApplicationTester/.settings/language.settings.xml

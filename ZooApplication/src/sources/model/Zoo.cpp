@@ -10,7 +10,6 @@
 #include "Zoo.h"
 using namespace std;
 
-
 Zoo::Zoo(string name) {
 	this->name = name;
 }
