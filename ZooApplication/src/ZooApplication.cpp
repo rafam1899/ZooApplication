@@ -7,9 +7,14 @@
 //============================================================================
 
 #include <iostream>
+#include "Zoo.h"
 using namespace std;
 
 int main() {
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+
+	Zoo zoo("Quinta");
+
+	cout << zoo.getName() << endl; // prints !!!Hello World!!!
+
 	return 0;
 }
