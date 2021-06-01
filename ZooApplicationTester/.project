@@ -24,4 +24,21 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>ZooApplication</name>
+			<type>2</type>
+			<location>C:/Users/Tiago Oliveira/eclipse-workspace/fsoft2021_team_8/ZooApplication</location>
+		</link>
+		<link>
+			<name>headers</name>
+			<type>2</type>
+			<location>C:/Users/Tiago Oliveira/eclipse-workspace/fsoft2021_team_8/ZooApplication/src/headers</location>
+		</link>
+		<link>
+			<name>sources</name>
+			<type>2</type>
+			<location>C:/Users/Tiago Oliveira/eclipse-workspace/fsoft2021_team_8/ZooApplication/src/sources</location>
+		</link>
+	</linkedResources>
 </projectDescription>
