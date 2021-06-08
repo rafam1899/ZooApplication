@@ -47,6 +47,22 @@ void Controller::runAnimals(){
 }
 
 void Controller::runCages(){
+	int op = -1;
+		do{
+			op=this->view.menuCages();
+			switch(op){
+			case 1:
+			break;
+			case 2:
+			break;
+			case 3:
+			break;
+			case 4:
+			break;
+			default:
+				break;
+			}
+		}while(op!=0);
 
 
 }
