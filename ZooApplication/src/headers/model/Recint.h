@@ -12,6 +12,7 @@
 #include "Staff.h"
 
 class Recint {
+
 private:
 	string name;
 	int visits;

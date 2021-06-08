@@ -7,13 +7,13 @@
 
 #ifndef HEADERS_CONTROLLERS_CONTROLLER_H_
 #define HEADERS_CONTROLLERS_CONTROLLER_H_
-#include"../model/Zoo.h"
-#include"../views/View.h"
-#include"../views/AnimalView.h"
-#include"../views/RecintView.h"
-#include"../views/StaffView.h"
-#include"../views/CageView.h"
-#include"../views/StatisticsView.h"
+#include"Zoo.h"
+#include"View.h"
+#include"AnimalView.h"
+#include"RecintView.h"
+#include"StaffView.h"
+#include"CageView.h"
+#include"StatisticsView.h"
 
 class Controller{
 

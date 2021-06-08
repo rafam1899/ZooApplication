@@ -6,14 +6,23 @@
 //============================================================================
 
 #include <iostream>
+#include <list>
+#include "Controller.h"
+#include "View.h"
+#include "AnimalView.h"
+#include "RecintView.h"
+#include "CageView.h"
 #include "Zoo.h"
+
 using namespace std;
 
 int main() {
 
 	Zoo zoo("Quinta");
 
-	cout << zoo.getName() << endl;
+	Controller controller(zoo);
+	controller.run();
+	cout << "Application has exited" << endl;
 
 	return 0;
 }

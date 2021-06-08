@@ -10,10 +10,14 @@
 #include "Zoo.h"
 using namespace std;
 
+Zoo::Zoo() {
+
+}
+
 Zoo::Zoo(string name) {
 	this->name = name;
 }
 
-const string& Zoo::getName() {
+string Zoo::getName() {
 	return name;
 }

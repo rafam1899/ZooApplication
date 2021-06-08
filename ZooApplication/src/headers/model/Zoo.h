@@ -15,8 +15,9 @@ class Zoo {
 	private:
 		string name;
 	public:
+		Zoo();
 		Zoo(string name);
-		const string& getName();
+		string getName();
 };
 
 
