@@ -7,8 +7,16 @@
 
 #ifndef HEADERS_VIEWS_RECINTVIEW_H_
 #define HEADERS_VIEWS_RECINTVIEW_H_
+#include <list>
+#include "../model/Recint.h"
 
+class RecintView {
 
+public:
+	Recint getRecint();
+	void printRecint(Recint *recint);
+	void printRecints(list<Recint>& recints);
+}
 
 
 

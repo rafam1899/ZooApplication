@@ -8,7 +8,16 @@
 #ifndef HEADERS_MODEL_CLIENT_H_
 #define HEADERS_MODEL_CLIENT_H_
 
+#include "Date.h"
 
+class Client {
+private:
+	Date date;
+	int number;
+
+public:
+	Client(Date& date);
+};
 
 
 

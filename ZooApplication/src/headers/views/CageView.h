@@ -8,7 +8,16 @@
 #ifndef HEADERS_VIEWS_CAGEVIEW_H_
 #define HEADERS_VIEWS_CAGEVIEW_H_
 
+#include <list>
+#include "../model/Cage.h"
 
+class CageView {
+
+public:
+	Cage getCage();
+	void printCage(Cage *cage);
+	void printCages(list<Cage>& cages);
+}
 
 
 

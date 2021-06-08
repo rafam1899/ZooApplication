@@ -7,7 +7,15 @@
 
 #ifndef HEADERS_VIEWS_ANIMALVIEW_H_
 #define HEADERS_VIEWS_ANIMALVIEW_H_
+#include <list>
+#include "../model/Animal.h"
 
+class AnimalView{
+public:
+	Animal getAnimal();
+	void printAnimal(Animal *animal);
+	void printAnimals(list<Animal>& animals);
+};
 
 
 
