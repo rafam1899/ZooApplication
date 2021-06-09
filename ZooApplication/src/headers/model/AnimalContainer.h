@@ -8,23 +8,25 @@
 #ifndef HEADERS_MODEL_ANIMALCONTAINER_H_
 #define HEADERS_MODEL_ANIMALCONTAINER_H_
 
+#include <list>
 #include "Animal.h"
 #include "CageContainer.h"
+
 using namespace std;
 
 class AnimalContainer{
 private:
-	list<Animal> animal;
+	list<Animal> animals;
 	list<Animal>::iterator search(int number);
-	CageContainer  cage;
+	CageContainer * cage;
 public:
 	list<Animal> getAll();
-	Animal get(int number);
+	Animal* get(int number);
 	void add(Animal& animal);
 	void remove(int number);
-	void move(int number, Cage cage);
+	void move(int number, Cage& cage);
 
-	void setCage(CageContainer cages);
+	void setCage(CageContainer *cages);
 };
 
 #endif /* HEADERS_MODEL_ANIMALCONTAINER_H_ */

@@ -15,14 +15,17 @@ using namespace std;
 
 class CageContainer{
 private:
-	list<Cage> cage;
+	list<Cage> cages;
 	list<Cage>::iterator search(int number);
-	RecintContainer  recint;
+	RecintContainer  recints;
+	int nAnimals;
 public:
 	list<Cage> getAll();
 	Cage get(int number);
 	void add(Cage& cage);
 	void remove(int number);
+	void removeAnimal();
+	void addAnimal();
 
 	void setRecint(RecintContainer recints);
 };

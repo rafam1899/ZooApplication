@@ -21,3 +21,19 @@ Zoo::Zoo(string name) {
 string Zoo::getName() {
 	return name;
 }
+
+AnimalContainer & Zoo::getAnimalContainer(){
+	return this->animals;
+}
+
+CageContainer & Zoo::getCageContainer(){
+	return this->cages;
+}
+
+RecintContainer & Zoo::getRecintContainer(){
+	return this->recints;
+}
+
+StaffContainer & Zoo::getStaffContainer(){
+	return this->staff;
+}

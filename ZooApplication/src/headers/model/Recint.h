@@ -7,23 +7,27 @@
 
 #ifndef HEADERS_MODEL_RECINT_H_
 #define HEADERS_MODEL_RECINT_H_
-#include <string>
 
+#include <string>
 #include "Staff.h"
+
+using namespace std;
 
 class Recint {
 
-private:
-	string name;
-	int visits;
-	int number;
-	Staff staff;
+	private:
+		static int NUMBER;
+		string name;
+		int visits;
+		int number;
+		Staff staff;
 
-public:
-	Recint(string& name);
-	Staff getStaff();
-	void setStaff(Staff& staff);
-	int getVisits();
+	public:
+		Recint();
+		Recint(string& name);
+		Staff getStaff();
+		void setStaff(Staff& staff);
+		int getVisits();
 };
 
 

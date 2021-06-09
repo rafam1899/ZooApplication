@@ -12,13 +12,18 @@
 
 class Cage {
 private:
+	static int NUMBER;
 	int capacity;
 	int number;
 	Recint recint;
 
 public:
+	Cage();
 	Cage(int& capacity,Recint& recint);
-
+	void setCapacity(int& cpy);
+	int getCapacity();
+	void setRecint(Recint& recint);
+	Recint getRecint();
 };
 
 

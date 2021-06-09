@@ -10,17 +10,20 @@
 
 #include <string>
 
+using namespace std;
+
 class Staff {
 
-private:
-	string name;
-	int number;
+	private:
+		static int NUMBER;
+		string name;
+		int number;
 
-
-public:
-	Staff(string& name);
-	string getName();
-	int getNumber();
+	public:
+		Staff();
+		Staff(string& name);
+		string getName();
+		int getNumber();
 
 };
 
