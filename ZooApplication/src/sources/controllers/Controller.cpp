@@ -56,7 +56,7 @@ void Controller::runAnimals(){
 
 		break;
 		case 2: {
-			Cage cage;
+			int cage;
 			int number = Utils::getNumber("Enter the Animal Number");
 			string name =  Utils::getString("Enter the Animal Name");
 			AnimalContainer& container = this->zoo.getAnimalContainer();
@@ -76,7 +76,7 @@ void Controller::runAnimals(){
 		}
 		break;
 		case 4: {
-			cout<<this->zoo.getName()<<endl;
+			cout<< "*****" << this->zoo.getName() << "*****" <<endl;
 			AnimalContainer& container = this->zoo.getAnimalContainer();
 			list<Animal> animals = container.getAll();
 			this->animalView.printAnimals(animals);

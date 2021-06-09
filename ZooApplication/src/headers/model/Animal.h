@@ -16,19 +16,22 @@ using namespace std;
 class Animal {
 
 	private:
-		string name;
 		string specie;
 		string gender;
 		static int NUMBER;
 		int number;
-		Cage cage;
+		int cage;
 
 	public:
-		Animal(const string& specie, const string& gender, const string& name);
+		Animal(const string& specie, const string& gender);
 		int getNumber();
-		Cage getCage();
-		void setCage(Cage& cage);
+		int getCage();
+		void setCage(int& cage);
+		void setGender(string& gender);
+		void setSpecie(string& specie);
 		string getSpecie();
+		string getGender();
+
 
 		bool operator == (const Animal& animal);
 		bool operator == (int nr);

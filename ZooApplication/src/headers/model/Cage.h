@@ -22,8 +22,12 @@ public:
 	Cage(int& capacity,Recint& recint);
 	void setCapacity(int& cpy);
 	int getCapacity();
+	int getNumber();
 	void setRecint(Recint& recint);
 	Recint getRecint();
+
+	bool operator == (const Cage& cage);
+	bool operator == (int nr);
 };
 
 

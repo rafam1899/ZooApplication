@@ -21,7 +21,7 @@ private:
 	int nAnimals;
 public:
 	list<Cage> getAll();
-	Cage get(int number);
+	Cage* get(int number);
 	void add(Cage& cage);
 	void remove(int number);
 	void removeAnimal();

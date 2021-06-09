@@ -9,15 +9,24 @@
 
 int Animal::NUMBER = 0;
 
-Animal::Animal(const string& specie, const string& gender, const string& name) {
+Animal::Animal(const string& specie, const string& gender) {
 	this->number = ++NUMBER;
 	this->specie = specie;
 	this->gender = gender;
-	this->name = name;
+	this->cage = 0;
 }
 
-void Animal::setCage(Cage& c) {
+void Animal::setCage(int& c) {
 	this->cage = c;
+}
+
+
+void Animal::setGender(string& gender) {
+	this->gender = gender;
+}
+
+void Animal::setSpecie(string& specie) {
+	this->specie = specie;
 }
 
 int Animal::getNumber() {
@@ -28,7 +37,11 @@ string Animal::getSpecie() {
 	return this->specie;
 }
 
-Cage Animal::getCage() {
+string Animal::getGender() {
+	return this->gender;
+}
+
+int Animal::getCage() {
 	return this->cage;
 }
 

@@ -39,6 +39,7 @@ void AnimalContainer::add(Animal& obj){
 	if(it == this->animals.end()){
 		this->animals.push_back(obj);
 		this->cage->addAnimal();
+
 	}else{
 		string msg = "Animal: " + to_string(obj.getNumber());
 		throw DuplicatedDataException(msg);
@@ -63,7 +64,7 @@ void AnimalContainer::remove(int number){
 	}
 }
 
-void AnimalContainer::move(int number, Cage& cage){
+void AnimalContainer::move(int number, int& cage){
 	list<Animal>::iterator it = search(number);
 	if(it != this->animals.end()){
 		it->setCage(cage);

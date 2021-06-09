@@ -33,6 +33,25 @@ int Cage::getCapacity() {
 	return this->capacity;
 }
 
+int Cage::getNumber() {
+	return this->number;
+}
+
 Recint Cage::getRecint() {
 	return this->recint;
+}
+
+bool Cage::operator == (const Cage& obj){
+	if(this->number == obj.number){
+		return true;
+	}
+	return false;
+}
+
+
+bool Cage::operator == (int nr){
+	if(this->number == nr){
+		return true;
+	}
+	return false;
 }

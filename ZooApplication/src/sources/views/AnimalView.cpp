@@ -5,7 +5,10 @@
  *      Author: Tiago Oliveira
  */
 
+#include <list>
 #include "AnimalView.h"
+#include "CageContainer.h"
+#include "CageView.h"
 #include <iostream>
 #include "Utils.h"
 #include "InvalidDataException.h"
@@ -14,9 +17,10 @@ using namespace std;
 
 Animal AnimalView::getAnimal(){
 
-	Cage cage;
-	Animal animal("ola", "olsa", "olssa");
-
+	Animal animal("temporary", "temporary");
+	CageView cageview;
+	CageContainer container;
+	list<Cage> cages = container.getAll();
 	bool flag = false;
 	do{
 
@@ -24,7 +28,12 @@ Animal AnimalView::getAnimal(){
 
 			flag = false;
 			cout<<"Animal"<<endl;
-			string name = Utils::getString("Name");
+			string gender = Utils::getString("Gender");
+			string specie = Utils::getString("Specie");
+			cageview.printCages(cages);
+			int cage = Utils::getNumber("Cage");
+			animal.setGender(gender);
+			animal.setSpecie(specie);
 			animal.setCage(cage);
 
 		}catch(InvalidDataException& e){
@@ -38,7 +47,7 @@ Animal AnimalView::getAnimal(){
 
 void AnimalView::printAnimal(Animal *animal){
 
-	cout << animal->getNumber() << " : " << animal->getSpecie() << " : " <<endl;
+	cout << animal->getNumber() << " : " << animal->getSpecie() << " : " << animal->getGender() << " : " << animal->getCage() << endl;
 
 }
 
