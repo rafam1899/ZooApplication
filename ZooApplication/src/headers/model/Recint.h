@@ -29,6 +29,9 @@ class Recint {
 		void setStaff(Staff& staff);
 		int getVisits();
 		int getNumber();
+
+		bool operator == (const Recint& recint);
+		bool operator == (int nr);
 };
 
 

@@ -35,3 +35,18 @@ int Recint::getVisits() {
 int Recint::getNumber() {
 	return this->number;
 }
+
+bool Recint::operator == (const Recint& obj){
+	if(this->number == obj.number){
+		return true;
+	}
+	return false;
+}
+
+
+bool Recint::operator == (int nr){
+	if(this->number == nr){
+		return true;
+	}
+	return false;
+}

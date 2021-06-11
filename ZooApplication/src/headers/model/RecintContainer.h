@@ -20,7 +20,7 @@ private:
 	StaffContainer  staff;
 public:
 	list<Recint> getAll();
-	Recint get(int number);
+	Recint* get(int number);
 	void add(Recint& recint);
 	void remove(int number);
 

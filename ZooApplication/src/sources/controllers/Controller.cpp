@@ -148,13 +148,39 @@ void Controller::runRecints(){
 	do{
 		op=this->view.menuRecints();
 		switch(op){
-		case 1:
+		case 1: {
+			Recint recint = this->recintView.getRecint();
+			RecintContainer& container = this->zoo.getRecintContainer();
+			container.add(recint);
+		}
 		break;
-		case 2:
+		case 2: {
+			try{
+				int number = Utils::getNumber("Enter the Recint Number");
+				RecintContainer& container = this->zoo.getRecintContainer();
+				container.remove(number);
+			}catch(DataConsistencyException& e){
+				string str(e.what());
+				cout<<str<<endl;
+			}
+		}
 		break;
-		case 3:
+		case 3: {
+			RecintContainer& container = this->zoo.getRecintContainer();
+			list<Recint> recints = container.getAll();
+			this->recintView.printRecints(recints);
+		}
 		break;
-		case 4:
+		case 4: {
+			try{
+				int number = Utils::getNumber("Enter the Recint Number");
+				RecintContainer& container = this->zoo.getRecintContainer();
+				container.get(number);
+			}catch(DataConsistencyException& e){
+				string str(e.what());
+				cout<<str<<endl;
+			}
+		}
 		break;
 		default:
 			break;
