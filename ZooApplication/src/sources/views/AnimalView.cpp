@@ -35,6 +35,7 @@ Animal AnimalView::getAnimal(){
 			animal.setGender(gender);
 			animal.setSpecie(specie);
 			animal.setCage(cage);
+			cout<<"** Animal created **"<<endl;
 
 		}catch(InvalidDataException& e){
 			flag = true;
@@ -58,6 +59,12 @@ void AnimalView::printAnimals(list<Animal>& animals){
 	for (list<Animal>::iterator it=animals.begin(); it != animals.end(); ++it){
 		printAnimal(&*it);
 	}
+
+}
+
+void AnimalView::printRemoveAnimal(Animal *animal){
+
+	cout << "** Animal " << animal->getNumber() << " removed **" << endl;
 
 }
 

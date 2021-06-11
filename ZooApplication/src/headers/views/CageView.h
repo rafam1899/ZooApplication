@@ -17,6 +17,7 @@ public:
 	Cage getCage();
 	void printCage(Cage *cage);
 	void printCages(list<Cage>& cages);
+	void printRemoveCage(Cage* cage);
 };
 
 

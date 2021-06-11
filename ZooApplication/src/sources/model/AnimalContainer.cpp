@@ -71,6 +71,15 @@ void AnimalContainer::move(int number, int& cage){
 	}
 }
 
+/*list<Animal> AnimalContainer::getAnimalsCage(int nCages) {
+	list<Animal>::iterator it;
+	it = find(this->animals.begin(),this->animals.end(), nCages);
+
+
+	return newList;
+
+}
+*/
 void AnimalContainer::setCage(CageContainer *cage) {
 	this->cage = cage;
 }

@@ -18,12 +18,16 @@ class Staff {
 		static int NUMBER;
 		string name;
 		int number;
+		int recint;
 
 	public:
 		Staff();
 		Staff(string& name);
 		string getName();
 		int getNumber();
+		int getRecint();
+		void setName(string name);
+		void setRecint(int recint);
 
 		bool operator == (const Staff& staff);
 		bool operator == (int nr);

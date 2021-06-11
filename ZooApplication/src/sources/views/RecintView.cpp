@@ -26,7 +26,10 @@ Recint RecintView::getRecint(){
 		try{
 
 			flag = false;
-			cout<<"Recint created"<<endl;
+			cout<<"\n** Insert recint details **\n"<<endl;
+			string name = Utils::getString("Name");
+			recint.setName(name);
+			cout<<"** Recint created **"<<endl;
 
 		}catch(InvalidDataException& e){
 			flag = true;
@@ -39,14 +42,22 @@ Recint RecintView::getRecint(){
 
 void RecintView::printRecint(Recint *recint){
 
-	cout << recint->getNumber() << " : " << endl;
+	cout << recint->getNumber() << " | " << recint->getName() << " | " << recint->getStaff() << " | " << recint->getVisits() << endl;
 
 }
 
 void RecintView::printRecints(list<Recint>& recints){
-
+	cout<< "\n" << endl;
+	cout << "ID | NAME | STAFF | VISITS" << endl;
+	cout << "---------------------------" << endl;
 	for (list<Recint>::iterator it=recints.begin(); it != recints.end(); ++it){
 		printRecint(&*it);
 	}
+
+}
+
+void RecintView::printRemoveRecint(Recint *recint){
+
+	cout << "** Recint " << recint->getNumber() << " removed **" << endl;
 
 }

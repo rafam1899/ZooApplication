@@ -25,7 +25,12 @@ Cage CageView::getCage(){
 		try{
 
 			flag = false;
-			cout<<"Cage created"<<endl;
+			cout<<"\n** Insert cage details **\n"<<endl;
+			int capacity = Utils::getNumber("Capacity");
+			cage.setCapacity(capacity);
+			int recint = Utils::getNumber("Recint");
+			cage.setRecint(recint);
+			cout<<"** Cage created **"<<endl;
 
 		}catch(InvalidDataException& e){
 			flag = true;
@@ -38,14 +43,22 @@ Cage CageView::getCage(){
 
 void CageView::printCage(Cage *cage){
 
-	cout << cage->getNumber() << " : " << endl;
+	cout << cage->getNumber() << " | " << cage->getRecint() << " | " << cage->getCapacity() << endl;
 
 }
 
 void CageView::printCages(list<Cage>& cages){
-
+	cout<< "\n" << endl;
+	cout << "ID | RECINT | CAPACITY" << endl;
+	cout << "---------------------------" << endl;
 	for (list<Cage>::iterator it=cages.begin(); it != cages.end(); ++it){
 		printCage(&*it);
 	}
+
+}
+
+void CageView::printRemoveCage(Cage *cage){
+
+	cout << "** Cage " << cage->getNumber() << " removed **" << endl;
 
 }

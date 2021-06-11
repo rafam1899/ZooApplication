@@ -15,16 +15,16 @@ private:
 	static int NUMBER;
 	int capacity;
 	int number;
-	Recint recint;
+	int recint;
 
 public:
 	Cage();
-	Cage(int& capacity,Recint& recint);
+	Cage(int& capacity,int& recint);
 	void setCapacity(int& cpy);
 	int getCapacity();
 	int getNumber();
-	void setRecint(Recint& recint);
-	Recint getRecint();
+	void setRecint(int& recint);
+	int getRecint();
 
 	bool operator == (const Cage& cage);
 	bool operator == (int nr);

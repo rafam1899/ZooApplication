@@ -25,6 +25,7 @@ public:
 	void add(Animal& animal);
 	void remove(int number);
 	void move(int number, int& cage);
+	list<Animal> getAnimalsCage(int nCage);
 
 	void setCage(CageContainer *cages);
 };

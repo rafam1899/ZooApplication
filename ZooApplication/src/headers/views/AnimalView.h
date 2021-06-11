@@ -17,6 +17,7 @@ class AnimalView {
 		Animal getAnimal();
 		void printAnimal(Animal *animal);
 		void printAnimals(list<Animal>& animals);
+		void printRemoveAnimal(Animal* animal);
 };
 
 

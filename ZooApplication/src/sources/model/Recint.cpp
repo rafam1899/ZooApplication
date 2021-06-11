@@ -12,19 +12,21 @@ int Recint::NUMBER = 0;
 Recint::Recint() {
 	this->number = ++NUMBER;
 	this->visits = 0;
+	this->staff = 0;
 }
 
 Recint::Recint(string& name) {
 	this->name = name;
 	this->number = ++NUMBER;
 	this->visits = 0;
+	this->staff = 0;
 }
 
-void Recint::setStaff(Staff& staff) {
+void Recint::setStaff(int& staff) {
 	this->staff = staff;
 }
 
-Staff Recint::getStaff() {
+int Recint::getStaff() {
 	return this->staff;
 }
 
@@ -34,6 +36,14 @@ int Recint::getVisits() {
 
 int Recint::getNumber() {
 	return this->number;
+}
+
+void Recint::setName(string name) {
+	this->name = name;
+}
+
+string Recint::getName() {
+	return this->name;
 }
 
 bool Recint::operator == (const Recint& obj){

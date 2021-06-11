@@ -16,6 +16,7 @@ public:
 	Recint getRecint();
 	void printRecint(Recint *recint);
 	void printRecints(list<Recint>& recints);
+	void printRemoveRecint(Recint* recint);
 };
 
 

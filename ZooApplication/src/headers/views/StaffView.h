@@ -17,6 +17,7 @@ public:
 	Staff getStaff();
 	void printStaff(Staff *staff);
 	void printStaffs(list<Staff>& staffs);
+	void printRemoveStaff(Staff* staff);
 };
 
 

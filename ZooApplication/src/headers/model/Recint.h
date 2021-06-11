@@ -20,15 +20,17 @@ class Recint {
 		string name;
 		int visits;
 		int number;
-		Staff staff;
+		int staff;
 
 	public:
 		Recint();
 		Recint(string& name);
-		Staff getStaff();
-		void setStaff(Staff& staff);
+		int getStaff();
+		void setStaff(int& staff);
 		int getVisits();
 		int getNumber();
+		string getName();
+		void setName(string name);
 
 		bool operator == (const Recint& recint);
 		bool operator == (int nr);

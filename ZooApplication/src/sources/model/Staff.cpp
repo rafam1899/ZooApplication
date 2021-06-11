@@ -12,11 +12,13 @@ int Staff::NUMBER = 0;
 
 Staff::Staff() {
 	this->number = ++NUMBER;
+	this->recint = 0;
 }
 
 Staff::Staff(string& name) {
 	this->name = name;
 	this->number = ++NUMBER;
+	this->recint = 0;
 }
 
 string Staff::getName() {
@@ -25,6 +27,18 @@ string Staff::getName() {
 
 int Staff::getNumber() {
 	return this->number;
+}
+
+int Staff::getRecint() {
+	return this->recint;
+}
+
+void Staff::setName(string name) {
+	this->name = name;
+}
+
+void Staff::setRecint(int recint) {
+	this->recint = recint;
 }
 
 bool Staff::operator == (const Staff& obj){

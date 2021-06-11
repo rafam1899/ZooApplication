@@ -25,7 +25,12 @@ Staff StaffView::getStaff(){
 		try{
 
 			flag = false;
-			cout<<"Staff created"<<endl;
+			cout<<"\n** Insert staff details **\n"<<endl;
+			string name = Utils::getString("Name");
+			staff.setName(name);
+			int recint = Utils::getNumber("Recint");
+			staff.setRecint(recint);
+			cout<<"** Staff created **"<<endl;
 
 		}catch(InvalidDataException& e){
 			flag = true;
@@ -38,14 +43,22 @@ Staff StaffView::getStaff(){
 
 void StaffView::printStaff(Staff *staff){
 
-	cout << staff->getNumber() << " : " << endl;
+	cout << staff->getNumber() << " | " << staff->getName() << " | " << staff->getRecint() << endl;
 
 }
 
 void StaffView::printStaffs(list<Staff>& staffs){
-
+	cout<< "\n" << endl;
+	cout << "ID | NAME | RECINT" << endl;
+	cout << "---------------------------" << endl;
 	for (list<Staff>::iterator it=staffs.begin(); it != staffs.end(); ++it){
 		printStaff(&*it);
 	}
+
+}
+
+void StaffView::printRemoveStaff(Staff *staff){
+
+	cout << "** Staff " << staff->getNumber() << " removed **" << endl;
 
 }

@@ -13,9 +13,10 @@ int Cage::NUMBER = 0;
 Cage::Cage() {
 	this->number = ++NUMBER;
 	this->capacity = 0;
+	this->recint = 0;
 }
 
-Cage::Cage(int& capacity, Recint& recint) {
+Cage::Cage(int& capacity, int& recint) {
 	this->capacity = capacity;
 	this->recint = recint;
 	this->number = ++NUMBER;
@@ -25,7 +26,7 @@ void Cage::setCapacity(int& cpy) {
 	this->capacity = cpy;
 }
 
-void Cage::setRecint(Recint& recint) {
+void Cage::setRecint(int& recint) {
 	this->recint = recint;
 }
 
@@ -37,7 +38,7 @@ int Cage::getNumber() {
 	return this->number;
 }
 
-Recint Cage::getRecint() {
+int Cage::getRecint() {
 	return this->recint;
 }
 

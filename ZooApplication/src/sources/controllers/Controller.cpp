@@ -68,7 +68,9 @@ void Controller::runAnimals(){
 			try{
 				int number = Utils::getNumber("Enter the Animal Number");
 				AnimalContainer& container = this->zoo.getAnimalContainer();
+				Animal* animal = container.get(number);
 				container.remove(number);
+				this->animalView.printRemoveAnimal(animal);
 			}catch(DataConsistencyException& e){
 				string str(e.what());
 				cout<<str<<endl;
@@ -108,7 +110,9 @@ void Controller::runCages(){
 			try{
 				int number = Utils::getNumber("Enter the Cage Number");
 				CageContainer& container = this->zoo.getCageContainer();
+				Cage* cage = container.get(number);
 				container.remove(number);
+				this->cageView.printRemoveCage(cage);
 			}catch(DataConsistencyException& e){
 				string str(e.what());
 				cout<<str<<endl;
@@ -158,7 +162,9 @@ void Controller::runRecints(){
 			try{
 				int number = Utils::getNumber("Enter the Recint Number");
 				RecintContainer& container = this->zoo.getRecintContainer();
+				Recint* recint = container.get(number);
 				container.remove(number);
+				this->recintView.printRemoveRecint(recint);
 			}catch(DataConsistencyException& e){
 				string str(e.what());
 				cout<<str<<endl;
@@ -215,7 +221,9 @@ void Controller::runStaff(){
 			try{
 				int number = Utils::getNumber("Enter the Staff Number");
 				StaffContainer& container = this->zoo.getStaffContainer();
+				Staff* staff = container.get(number);
 				container.remove(number);
+				this->staffView.printRemoveStaff(staff);
 			}catch(DataConsistencyException& e){
 				string str(e.what());
 				cout<<str<<endl;
