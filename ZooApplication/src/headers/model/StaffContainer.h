@@ -21,10 +21,10 @@ private:
 
 public:
 	list<Staff> getAll();
-	Staff get(int number);
+	Staff* get(int number);
 	void add(Staff& staff);
 	void remove(int number);
-	//void move(int number, RecintContainer& recint);
+	void move(int number, int& recint);
 
 
 };

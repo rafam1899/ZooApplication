@@ -83,7 +83,7 @@ int View::menuStaff() {
 			cout<<"1 - Add Staff\n";
 			cout<<"2 - Move Staff\n";
 			cout<<"3 - Remove Staff\n";
-			cout<<"4 - Recint List\n";
+			cout<<"4 - Staff List\n";
 			cout<<"\n0 - Exit\n";
 			op = Utils::getNumber("Option");
 		}while(op < 0 || op > 4);

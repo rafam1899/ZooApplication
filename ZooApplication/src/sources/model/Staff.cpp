@@ -26,3 +26,18 @@ string Staff::getName() {
 int Staff::getNumber() {
 	return this->number;
 }
+
+bool Staff::operator == (const Staff& obj){
+	if(this->number == obj.number){
+		return true;
+	}
+	return false;
+}
+
+
+bool Staff::operator == (int nr){
+	if(this->number == nr){
+		return true;
+	}
+	return false;
+}

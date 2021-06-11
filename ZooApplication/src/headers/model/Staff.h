@@ -25,6 +25,8 @@ class Staff {
 		string getName();
 		int getNumber();
 
+		bool operator == (const Staff& staff);
+		bool operator == (int nr);
 };
 
 

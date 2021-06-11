@@ -197,13 +197,36 @@ void Controller::runStaff(){
 	do{
 		op=this->view.menuStaff();
 		switch(op){
-		case 1:
+		case 1: {
+			Staff staff = this->staffView.getStaff();
+			StaffContainer& container = this->zoo.getStaffContainer();
+			container.add(staff);
+		}
 		break;
-		case 2:
+		case 2: {
+			int recint;
+			int number = Utils::getNumber("Enter the Staff Number");
+			string name =  Utils::getString("Enter the Staff Name");
+			StaffContainer& container = this->zoo.getStaffContainer();
+			container.move(number,recint);
+		}
 		break;
-		case 3:
+		case 3: {
+			try{
+				int number = Utils::getNumber("Enter the Staff Number");
+				StaffContainer& container = this->zoo.getStaffContainer();
+				container.remove(number);
+			}catch(DataConsistencyException& e){
+				string str(e.what());
+				cout<<str<<endl;
+			}
+		}
 		break;
-		case 4:
+		case 4: {
+			StaffContainer& container = this->zoo.getStaffContainer();
+			list<Staff> staff = container.getAll();
+			this->staffView.printStaffs(staff);
+		}
 		break;
 		default:
 			break;
