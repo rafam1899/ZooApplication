@@ -27,7 +27,7 @@ Animal AnimalView::getAnimal(){
 		try{
 
 			flag = false;
-			cout<<"Animal"<<endl;
+			cout<<"\n** Insert animal details **\n"<<endl;
 			string gender = Utils::getString("Gender");
 			string specie = Utils::getString("Specie");
 			cageview.printCages(cages);
@@ -47,12 +47,14 @@ Animal AnimalView::getAnimal(){
 
 void AnimalView::printAnimal(Animal *animal){
 
-	cout << animal->getNumber() << " : " << animal->getSpecie() << " : " << animal->getGender() << " : " << animal->getCage() << endl;
+	cout << animal->getNumber() << " | " << animal->getSpecie() << " | " << animal->getGender() << " | " << animal->getCage() << endl;
 
 }
 
 void AnimalView::printAnimals(list<Animal>& animals){
-
+	cout<< "\n" << endl;
+	cout << "ID | SPECIE | GENDER | CAGE" << endl;
+	cout << "---------------------------" << endl;
 	for (list<Animal>::iterator it=animals.begin(); it != animals.end(); ++it){
 		printAnimal(&*it);
 	}

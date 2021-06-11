@@ -76,7 +76,7 @@ void Controller::runAnimals(){
 		}
 		break;
 		case 4: {
-			cout<< "*****" << this->zoo.getName() << "*****" <<endl;
+
 			AnimalContainer& container = this->zoo.getAnimalContainer();
 			list<Animal> animals = container.getAll();
 			this->animalView.printAnimals(animals);
@@ -98,13 +98,40 @@ void Controller::runCages(){
 	do{
 		op=this->view.menuCages();
 		switch(op){
-		case 1:
+		case 1: {
+			Cage cage = this->cageView.getCage();
+			CageContainer& container = this->zoo.getCageContainer();
+			container.add(cage);
+		}
 		break;
-		case 2:
+		case 2: {
+			try{
+				int number = Utils::getNumber("Enter the Cage Number");
+				CageContainer& container = this->zoo.getCageContainer();
+				container.remove(number);
+			}catch(DataConsistencyException& e){
+				string str(e.what());
+				cout<<str<<endl;
+			}
+		}
 		break;
-		case 3:
+		case 3: {
+			CageContainer& container = this->zoo.getCageContainer();
+			list<Cage> cages = container.getAll();
+			this->cageView.printCages(cages);
+		}
+
 		break;
-		case 4:
+		case 4: {
+			try{
+				int number = Utils::getNumber("Enter the Cage Number");
+				CageContainer& container = this->zoo.getCageContainer();
+				container.get(number);
+			}catch(DataConsistencyException& e){
+				string str(e.what());
+				cout<<str<<endl;
+			}
+		}
 		break;
 		default:
 			break;
