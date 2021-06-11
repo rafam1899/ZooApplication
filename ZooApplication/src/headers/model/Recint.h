@@ -28,6 +28,7 @@ class Recint {
 		Staff getStaff();
 		void setStaff(Staff& staff);
 		int getVisits();
+		int getNumber();
 };
 
 

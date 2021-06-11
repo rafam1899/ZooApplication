@@ -31,3 +31,7 @@ Staff Recint::getStaff() {
 int Recint::getVisits() {
 	return this->visits;
 }
+
+int Recint::getNumber() {
+	return this->number;
+}
