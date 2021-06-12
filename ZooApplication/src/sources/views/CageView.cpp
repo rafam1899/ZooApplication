@@ -42,14 +42,13 @@ Cage CageView::getCage(){
 }
 
 void CageView::printCage(Cage *cage){
-
-	cout << cage->getNumber() << " | " << cage->getRecint() << " | " << cage->getCapacity() << endl;
+	cout << cage->getNumber() << " | " << cage->getRecint() << " | " << cage->getCapacity() << " | " << cage->getNumAnimals() << endl;
 
 }
 
 void CageView::printCages(list<Cage>& cages){
-	cout<< "\n" << endl;
-	cout << "ID | RECINT | CAPACITY" << endl;
+	cout<< "\n** Cage List **" << endl;
+	cout << "ID | RECINT | CAPACITY | Nº ANIMALS INSIDE" << endl;
 	cout << "---------------------------" << endl;
 	for (list<Cage>::iterator it=cages.begin(); it != cages.end(); ++it){
 		printCage(&*it);
@@ -60,5 +59,26 @@ void CageView::printCages(list<Cage>& cages){
 void CageView::printRemoveCage(Cage *cage){
 
 	cout << "** Cage " << cage->getNumber() << " removed **" << endl;
+
+}
+
+void CageView::printCageAnimals(list<Animal>& animals, Cage cage) {
+
+	if(animals.empty()) {
+		cout << "\nCage capacity " << cage.getCapacity() << endl;
+		cout << "Number of animals inside " << cage.getNumAnimals() << endl;
+		cout << "\n** Cage has no animals inside **"<< endl;
+		return;
+	}
+
+	cout << "\nCage capacity " << cage.getCapacity() << endl;
+	cout << "Number of animals inside " << cage.getNumAnimals() << endl;
+	cout<< "\n ** List of animals inside cage **\n" << endl;
+
+	cout << "ID | SPECIE | GENDER" << endl;
+	cout << "---------------------------" << endl;
+	for (list<Animal>::iterator it=animals.begin(); it != animals.end(); ++it){
+		cout << it->getNumber() << " | " << it->getSpecie() << " | " << it->getGender() << endl;
+	}
 
 }

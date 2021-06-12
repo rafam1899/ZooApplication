@@ -14,12 +14,14 @@ Cage::Cage() {
 	this->number = ++NUMBER;
 	this->capacity = 0;
 	this->recint = 0;
+	this->nAnimals = 0;
 }
 
 Cage::Cage(int& capacity, int& recint) {
 	this->capacity = capacity;
 	this->recint = recint;
 	this->number = ++NUMBER;
+	this->nAnimals = 0;
 }
 
 void Cage::setCapacity(int& cpy) {
@@ -30,8 +32,16 @@ void Cage::setRecint(int& recint) {
 	this->recint = recint;
 }
 
+void Cage::setNumAnimals(int& num) {
+	this->nAnimals = num;
+}
+
 int Cage::getCapacity() {
 	return this->capacity;
+}
+
+int Cage::getNumAnimals() {
+	return this->nAnimals;
 }
 
 int Cage::getNumber() {

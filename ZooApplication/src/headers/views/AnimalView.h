@@ -10,14 +10,15 @@
 
 #include <list>
 #include "Animal.h"
+#include "CageContainer.h"
 
 class AnimalView {
 
 	public:
-		Animal getAnimal();
+		Animal getAnimal(CageContainer &container);
 		void printAnimal(Animal *animal);
 		void printAnimals(list<Animal>& animals);
-		void printRemoveAnimal(Animal* animal);
+		void printRemoveAnimal(Animal* animal, Cage* cage);
 };
 
 

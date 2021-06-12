@@ -15,11 +15,10 @@
 using namespace std;
 
 
-Animal AnimalView::getAnimal(){
+Animal AnimalView::getAnimal(CageContainer &container){
 
 	Animal animal("temporary", "temporary");
 	CageView cageview;
-	CageContainer container;
 	list<Cage> cages = container.getAll();
 	bool flag = false;
 	do{
@@ -31,11 +30,13 @@ Animal AnimalView::getAnimal(){
 			string gender = Utils::getString("Gender");
 			string specie = Utils::getString("Specie");
 			cageview.printCages(cages);
-			int cage = Utils::getNumber("Cage");
+			int nCage = Utils::getNumber("Cage");
 			animal.setGender(gender);
 			animal.setSpecie(specie);
-			animal.setCage(cage);
+			animal.setCage(nCage);
 			cout<<"** Animal created **"<<endl;
+			int numAnimals = container.get(nCage)->getNumAnimals() + 1;
+			container.get(nCage)->setNumAnimals(numAnimals);
 
 		}catch(InvalidDataException& e){
 			flag = true;
@@ -62,9 +63,11 @@ void AnimalView::printAnimals(list<Animal>& animals){
 
 }
 
-void AnimalView::printRemoveAnimal(Animal *animal){
+void AnimalView::printRemoveAnimal(Animal *animal, Cage *cage){
 
 	cout << "** Animal " << animal->getNumber() << " removed **" << endl;
+	int num = cage->getNumAnimals() - 1;
+	cage->setNumAnimals(num);
 
 }
 

@@ -16,7 +16,7 @@ private:
 	int capacity;
 	int number;
 	int recint;
-
+	int nAnimals;
 public:
 	Cage();
 	Cage(int& capacity,int& recint);
@@ -25,6 +25,8 @@ public:
 	int getNumber();
 	void setRecint(int& recint);
 	int getRecint();
+	int getNumAnimals();
+	void setNumAnimals(int& num);
 
 	bool operator == (const Cage& cage);
 	bool operator == (int nr);

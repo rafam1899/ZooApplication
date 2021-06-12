@@ -49,9 +49,16 @@ void Controller::runAnimals(){
 		op=this->view.menuAnimals();
 		switch(op){
 		case 1: {
-			Animal animal = this->animalView.getAnimal();
-			AnimalContainer& container = this->zoo.getAnimalContainer();
-			container.add(animal);
+			CageContainer& CageContainer = this->zoo.getCageContainer();
+			Animal animal = this->animalView.getAnimal(CageContainer);
+			int cage = animal.getCage();
+			if(CageContainer.get(cage)->getNumAnimals() > CageContainer.get(cage)->getCapacity()) {
+				cout << "Cage is full" << endl;
+			} else {
+				AnimalContainer& container = this->zoo.getAnimalContainer();
+				container.add(animal);
+			}
+
 		}
 
 		break;
@@ -66,11 +73,13 @@ void Controller::runAnimals(){
 		break;
 		case 3: {
 			try{
+				CageContainer& CageContainer = this->zoo.getCageContainer();
 				int number = Utils::getNumber("Enter the Animal Number");
 				AnimalContainer& container = this->zoo.getAnimalContainer();
 				Animal* animal = container.get(number);
+				int cage = animal->getCage();
 				container.remove(number);
-				this->animalView.printRemoveAnimal(animal);
+				this->animalView.printRemoveAnimal(animal, CageContainer.get(cage));
 			}catch(DataConsistencyException& e){
 				string str(e.what());
 				cout<<str<<endl;
@@ -130,7 +139,10 @@ void Controller::runCages(){
 			try{
 				int number = Utils::getNumber("Enter the Cage Number");
 				CageContainer& container = this->zoo.getCageContainer();
-				container.get(number);
+				Cage *cage = container.get(number);
+				AnimalContainer& containerAnimal = this->zoo.getAnimalContainer();
+				list<Animal> animals = containerAnimal.getAnimalsCage(number);
+				this->cageView.printCageAnimals(animals, *cage);
 			}catch(DataConsistencyException& e){
 				string str(e.what());
 				cout<<str<<endl;

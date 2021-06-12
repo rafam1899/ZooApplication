@@ -36,14 +36,15 @@ Animal* AnimalContainer::get(int number){
 
 void AnimalContainer::add(Animal& obj){
 	list<Animal>::iterator it = search(obj.getNumber());
+
 	if(it == this->animals.end()){
-		this->animals.push_back(obj);
-		this->cage->addAnimal();
+			this->animals.push_back(obj);
 
 	}else{
 		string msg = "Animal: " + to_string(obj.getNumber());
 		throw DuplicatedDataException(msg);
 	}
+
 }
 
 void AnimalContainer::remove(int number){
@@ -54,7 +55,6 @@ void AnimalContainer::remove(int number){
 	if(it != this->animals.end()){
 
 		this->animals.erase(it);
-		this->cage->removeAnimal();
 
 	} else {
 
@@ -71,17 +71,19 @@ void AnimalContainer::move(int number, int& cage){
 	}
 }
 
-/*list<Animal> AnimalContainer::getAnimalsCage(int nCages) {
-	list<Animal>::iterator it;
-	it = find(this->animals.begin(),this->animals.end(), nCages);
+list<Animal> AnimalContainer::getAnimalsCage(int nCages) {
+	list<Animal> newlist;
 
+	list<Animal>::iterator it = this->animals.begin();
 
-	return newList;
+	for (; it != this->animals.end(); ++it){
+		if(it->getCage() == nCages){
+			newlist.push_back(*it);
+		}
+	}
 
-}
-*/
-void AnimalContainer::setCage(CageContainer *cage) {
-	this->cage = cage;
+	return newlist;
+
 }
 
 
