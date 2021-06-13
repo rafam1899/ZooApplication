@@ -40,7 +40,6 @@ void StaffContainer::add(Staff& obj){
 	list<Staff>::iterator it = search(obj.getNumber());
 	if(it == this->staff.end()){
 		this->staff.push_back(obj);
-		//this->recint->addStaff();
 
 	}else{
 		string msg = "Staff: " + to_string(obj.getNumber());

@@ -17,7 +17,7 @@ Cage::Cage() {
 	this->nAnimals = 0;
 }
 
-Cage::Cage(int& capacity, int& recint) {
+Cage::Cage(int capacity, int recint) {
 	this->capacity = capacity;
 	this->recint = recint;
 	this->number = ++NUMBER;

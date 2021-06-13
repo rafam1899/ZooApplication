@@ -13,12 +13,16 @@
 #include "RecintView.h"
 #include "CageView.h"
 #include "Zoo.h"
+#include "MockData.h"
 
 using namespace std;
 
 int main() {
 
 	Zoo zoo("Quinta");
+
+	MockData mock;
+	mock.generateData(zoo);
 
 	Controller controller(zoo);
 	controller.run();

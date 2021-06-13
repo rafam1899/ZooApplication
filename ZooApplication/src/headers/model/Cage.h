@@ -19,7 +19,7 @@ private:
 	int nAnimals;
 public:
 	Cage();
-	Cage(int& capacity,int& recint);
+	Cage(int capacity,int recint);
 	void setCapacity(int& cpy);
 	int getCapacity();
 	int getNumber();

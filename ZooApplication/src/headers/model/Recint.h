@@ -26,7 +26,7 @@ class Recint {
 
 	public:
 		Recint();
-		Recint(string& name);
+		Recint(string name);
 		int getStaff();
 		void setStaff(int& staff);
 		int getVisits();
@@ -34,7 +34,8 @@ class Recint {
 		string getName();
 		void setName(string name);
 		int getNumCages();
-		void setNumCages(int& num);
+		void setNumCages(int num);
+		void setVisits(int num);
 
 		bool operator == (const Recint& recint);
 		bool operator == (int nr);

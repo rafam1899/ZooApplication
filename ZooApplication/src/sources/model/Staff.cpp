@@ -15,7 +15,7 @@ Staff::Staff() {
 	this->recint = 0;
 }
 
-Staff::Staff(string& name) {
+Staff::Staff(string name) {
 	this->name = name;
 	this->number = ++NUMBER;
 	this->recint = 0;

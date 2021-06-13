@@ -23,7 +23,7 @@ class Staff {
 
 	public:
 		Staff();
-		Staff(string& name);
+		Staff(string name);
 		string getName();
 		int getNumber();
 		int getRecint();
