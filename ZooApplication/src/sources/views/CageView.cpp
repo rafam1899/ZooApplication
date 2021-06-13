@@ -8,6 +8,8 @@
 #include <list>
 #include "AnimalView.h"
 #include "CageContainer.h"
+#include "RecintContainer.h"
+#include "RecintView.h"
 #include "CageView.h"
 #include <iostream>
 #include "Utils.h"
@@ -15,9 +17,11 @@
 using namespace std;
 
 
-Cage CageView::getCage(){
+Cage CageView::getCage(RecintContainer &container){
 
 	Cage cage;
+	RecintView recintView;
+	list<Recint> recints = container.getAll();
 
 	bool flag = false;
 	do{
@@ -28,9 +32,11 @@ Cage CageView::getCage(){
 			cout<<"\n** Insert cage details **\n"<<endl;
 			int capacity = Utils::getNumber("Capacity");
 			cage.setCapacity(capacity);
+			recintView.printRecints(recints);
 			int recint = Utils::getNumber("Recint");
 			cage.setRecint(recint);
 			cout<<"** Cage created **"<<endl;
+
 
 		}catch(InvalidDataException& e){
 			flag = true;
@@ -56,8 +62,10 @@ void CageView::printCages(list<Cage>& cages){
 
 }
 
-void CageView::printRemoveCage(Cage *cage){
+void CageView::printRemoveCage(Cage *cage, Recint *recint){
 
+	int num = recint->getNumCages() - 1;
+	recint->setNumCages(num);
 	cout << "** Cage " << cage->getNumber() << " removed **" << endl;
 
 }

@@ -42,13 +42,13 @@ Recint RecintView::getRecint(){
 
 void RecintView::printRecint(Recint *recint){
 
-	cout << recint->getNumber() << " | " << recint->getName() << " | " << recint->getStaff() << " | " << recint->getVisits() << endl;
+	cout << recint->getNumber() << " | " << recint->getName() << " | " << recint->getStaff() << " | " << recint->getVisits() << " | " << recint->getNumCages() << endl;
 
 }
 
 void RecintView::printRecints(list<Recint>& recints){
 	cout<< "\n" << endl;
-	cout << "ID | NAME | STAFF | VISITS" << endl;
+	cout << "ID | NAME | STAFF | VISITS | Nº CAGES" << endl;
 	cout << "---------------------------" << endl;
 	for (list<Recint>::iterator it=recints.begin(); it != recints.end(); ++it){
 		printRecint(&*it);
@@ -59,5 +59,29 @@ void RecintView::printRecints(list<Recint>& recints){
 void RecintView::printRemoveRecint(Recint *recint){
 
 	cout << "** Recint " << recint->getNumber() << " removed **" << endl;
+
+}
+
+void RecintView::printRecintCages(list<Cage>& cages, Recint recint) {
+
+	if(cages.empty()) {
+		cout << "\n** Recint: " << recint.getName() << " **" << endl;
+		cout << "Staff working: " << recint.getStaff() << endl;
+		cout << "Nº cages associated: " << recint.getNumCages() << endl;
+		cout << "Visits: " << recint.getVisits() << endl;
+		cout << "\n** Recint has no cages associated **"<< endl;
+		return;
+	}
+	cout << "\n** Recint: " << recint.getName() << " **" << endl;
+	cout << "Staff working: " << recint.getStaff() << endl;
+	cout << "Nº cages associated: " << recint.getNumCages() << endl;
+	cout << "Visits: " << recint.getVisits() << endl;
+	cout<< "\n ** List of cages associated **\n" << endl;
+
+	cout << "ID | CAPACITY | Nº ANIMALS" << endl;
+	cout << "---------------------------" << endl;
+	for (list<Cage>::iterator it=cages.begin(); it != cages.end(); ++it){
+		cout << it->getNumber() << " | " << it->getCapacity() << " | " << it->getNumAnimals() << endl;
+	}
 
 }

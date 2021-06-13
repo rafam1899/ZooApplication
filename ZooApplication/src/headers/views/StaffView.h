@@ -10,11 +10,12 @@
 
 #include <list>
 #include "../model/Staff.h"
+#include "RecintContainer.h"
 
 class StaffView {
 
 public:
-	Staff getStaff();
+	Staff getStaff(RecintContainer &container);
 	void printStaff(Staff *staff);
 	void printStaffs(list<Staff>& staffs);
 	void printRemoveStaff(Staff* staff);

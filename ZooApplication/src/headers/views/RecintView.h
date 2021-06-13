@@ -17,6 +17,7 @@ public:
 	void printRecint(Recint *recint);
 	void printRecints(list<Recint>& recints);
 	void printRemoveRecint(Recint* recint);
+	void printRecintCages(list<Cage>& cages, Recint recint);
 };
 
 

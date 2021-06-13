@@ -13,6 +13,7 @@ Recint::Recint() {
 	this->number = ++NUMBER;
 	this->visits = 0;
 	this->staff = 0;
+	this->nCages = 0;
 }
 
 Recint::Recint(string& name) {
@@ -20,6 +21,7 @@ Recint::Recint(string& name) {
 	this->number = ++NUMBER;
 	this->visits = 0;
 	this->staff = 0;
+	this->nCages = 0;
 }
 
 void Recint::setStaff(int& staff) {
@@ -28,6 +30,14 @@ void Recint::setStaff(int& staff) {
 
 int Recint::getStaff() {
 	return this->staff;
+}
+
+void Recint::setNumCages(int& num) {
+	this->nCages = num;
+}
+
+int Recint::getNumCages() {
+	return this->nCages;
 }
 
 int Recint::getVisits() {

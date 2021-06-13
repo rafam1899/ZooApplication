@@ -15,9 +15,11 @@
 using namespace std;
 
 
-Staff StaffView::getStaff(){
+Staff StaffView::getStaff(RecintContainer &container){
 
 	Staff staff;
+	RecintView recintView;
+	list<Recint> recints = container.getAll();
 
 	bool flag = false;
 	do{
@@ -28,8 +30,11 @@ Staff StaffView::getStaff(){
 			cout<<"\n** Insert staff details **\n"<<endl;
 			string name = Utils::getString("Name");
 			staff.setName(name);
+			recintView.printRecints(recints);
 			int recint = Utils::getNumber("Recint");
 			staff.setRecint(recint);
+			int num = staff.getNumber();
+			container.get(recint)->setStaff(num);
 			cout<<"** Staff created **"<<endl;
 
 		}catch(InvalidDataException& e){

@@ -14,10 +14,10 @@
 class CageView {
 
 public:
-	Cage getCage();
+	Cage getCage(RecintContainer &container);
 	void printCage(Cage *cage);
 	void printCages(list<Cage>& cages);
-	void printRemoveCage(Cage* cage);
+	void printRemoveCage(Cage* cage, Recint* recint);
 	void printCageAnimals(list<Animal>& animals, Cage cage);
 };
 

@@ -111,23 +111,27 @@ void Controller::runCages(){
 		op=this->view.menuCages();
 		switch(op){
 		case 1: {
-			Cage cage = this->cageView.getCage();
+			RecintContainer& recintContainer = this->zoo.getRecintContainer();
+			Cage cage = this->cageView.getCage(recintContainer);
 			CageContainer& container = this->zoo.getCageContainer();
-			container.add(cage);
+			Recint* recint = recintContainer.get(cage.getRecint());
+			container.add(cage,recint);
 		}
 		break;
 		case 2: {
 			try{
 				int number = Utils::getNumber("Enter the Cage Number");
 				CageContainer& container = this->zoo.getCageContainer();
+				RecintContainer& recintContainer = this->zoo.getRecintContainer();
 				Cage* cage = container.get(number);
+				Recint* recint = recintContainer.get(cage->getRecint());
 
 				if(cage->getNumAnimals() > 0) {
 					throw DataConsistencyException("** Cage have animals inside **");
 
 				} else {
 					container.remove(number);
-					this->cageView.printRemoveCage(cage);
+					this->cageView.printRemoveCage(cage, recint);
 				}
 
 			}catch(DataConsistencyException& e){
@@ -183,8 +187,14 @@ void Controller::runRecints(){
 				int number = Utils::getNumber("Enter the Recint Number");
 				RecintContainer& container = this->zoo.getRecintContainer();
 				Recint* recint = container.get(number);
-				container.remove(number);
-				this->recintView.printRemoveRecint(recint);
+				if(recint->getNumCages() > 0) {
+					throw DataConsistencyException("** Recint have cages associated **");
+				} else {
+					container.remove(number);
+					this->recintView.printRemoveRecint(recint);
+				}
+
+
 			}catch(DataConsistencyException& e){
 				string str(e.what());
 				cout<<str<<endl;
@@ -201,7 +211,10 @@ void Controller::runRecints(){
 			try{
 				int number = Utils::getNumber("Enter the Recint Number");
 				RecintContainer& container = this->zoo.getRecintContainer();
-				container.get(number);
+				Recint *recint = container.get(number);
+				CageContainer& containerCage = this->zoo.getCageContainer();
+				list<Cage> cages = containerCage.getCagesRecint(number);
+				this->recintView.printRecintCages(cages, *recint);
 			}catch(DataConsistencyException& e){
 				string str(e.what());
 				cout<<str<<endl;
@@ -224,7 +237,8 @@ void Controller::runStaff(){
 		op=this->view.menuStaff();
 		switch(op){
 		case 1: {
-			Staff staff = this->staffView.getStaff();
+			RecintContainer& recintContainer = this->zoo.getRecintContainer();
+			Staff staff = this->staffView.getStaff(recintContainer);
 			StaffContainer& container = this->zoo.getStaffContainer();
 			container.add(staff);
 		}

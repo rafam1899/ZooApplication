@@ -18,22 +18,26 @@ using namespace std;
 Animal AnimalView::getAnimal(CageContainer &container){
 
 	Animal animal("temporary", "temporary");
-	CageView cageview;
+	CageView cageView;
 	list<Cage> cages = container.getAll();
 	bool flag = false;
 	do{
 
 		try{
+			if(cages.empty()) {
+				cout<<"\n** Insert cages first **\n"<<endl;
+			} else {
+				flag = false;
+				cout<<"\n** Insert animal details **\n"<<endl;
+				string gender = Utils::getString("Gender");
+				string specie = Utils::getString("Specie");
+				cageView.printCages(cages);
+				int nCage = Utils::getNumber("Cage");
+				animal.setGender(gender);
+				animal.setSpecie(specie);
+				animal.setCage(nCage);
+			}
 
-			flag = false;
-			cout<<"\n** Insert animal details **\n"<<endl;
-			string gender = Utils::getString("Gender");
-			string specie = Utils::getString("Specie");
-			cageview.printCages(cages);
-			int nCage = Utils::getNumber("Cage");
-			animal.setGender(gender);
-			animal.setSpecie(specie);
-			animal.setCage(nCage);
 
 
 		}catch(InvalidDataException& e){

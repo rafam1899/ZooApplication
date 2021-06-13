@@ -22,8 +22,9 @@ private:
 public:
 	list<Cage> getAll();
 	Cage* get(int number);
-	void add(Cage& cage);
+	void add(Cage& cage, Recint* recint);
 	void remove(int number);
+	list<Cage> getCagesRecint(int nRecints);
 
 	void setRecint(RecintContainer recints);
 };

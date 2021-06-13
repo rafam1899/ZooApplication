@@ -10,6 +10,7 @@
 
 #include <string>
 #include "Staff.h"
+#include "Cage.h"
 
 using namespace std;
 
@@ -21,6 +22,7 @@ class Recint {
 		int visits;
 		int number;
 		int staff;
+		int nCages;
 
 	public:
 		Recint();
@@ -31,6 +33,8 @@ class Recint {
 		int getNumber();
 		string getName();
 		void setName(string name);
+		int getNumCages();
+		void setNumCages(int& num);
 
 		bool operator == (const Recint& recint);
 		bool operator == (int nr);

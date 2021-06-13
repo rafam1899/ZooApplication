@@ -35,10 +35,12 @@ Cage* CageContainer::get(int number){
 	return NULL;
 }
 
-void CageContainer::add(Cage& obj){
+void CageContainer::add(Cage& obj, Recint* recint){
 	list<Cage>::iterator it = search(obj.getNumber());
 	if(it == this->cages.end()){
 		this->cages.push_back(obj);
+		int num = recint->getNumCages() + 1;
+		recint->setNumCages(num);
 
 	}else{
 		string msg = "Cage: " + to_string(obj.getNumber());
@@ -61,4 +63,19 @@ void CageContainer::remove(int number){
 		throw DuplicatedDataException(msg);
 
 	}
+}
+
+list<Cage> CageContainer::getCagesRecint(int nRecints) {
+	list<Cage> newlist;
+
+	list<Cage>::iterator it = this->cages.begin();
+
+	for (; it != this->cages.end(); ++it){
+		if(it->getRecint() == nRecints){
+			newlist.push_back(*it);
+		}
+	}
+
+	return newlist;
+
 }

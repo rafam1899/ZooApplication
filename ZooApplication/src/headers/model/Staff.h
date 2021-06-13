@@ -9,6 +9,7 @@
 #define HEADERS_MODEL_STAFF_H_
 
 #include <string>
+#include "Recint.h"
 
 using namespace std;
 
