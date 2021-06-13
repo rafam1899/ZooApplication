@@ -67,3 +67,7 @@ void StaffView::printRemoveStaff(Staff *staff){
 	cout << "** Staff " << staff->getNumber() << " removed **" << endl;
 
 }
+
+void StaffView::printMove() {
+	cout << "** Staff moved with sucess" << endl;
+}

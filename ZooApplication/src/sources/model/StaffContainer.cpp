@@ -69,6 +69,6 @@ void StaffContainer::remove(int number){
 void StaffContainer::move(int number, int& recint){
 	list<Staff>::iterator it = search(number);
 	if(it != this->staff.end()){
-		//it->setCage(cage);
+		it->setRecint(recint);
 	}
 }

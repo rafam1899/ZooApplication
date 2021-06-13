@@ -251,11 +251,21 @@ void Controller::runStaff(){
 		}
 		break;
 		case 2: {
-			int recint;
-			int number = Utils::getNumber("Enter the Staff Number");
-			string name =  Utils::getString("Enter the Staff Name");
 			StaffContainer& container = this->zoo.getStaffContainer();
+			RecintContainer& recintContainer = this->zoo.getRecintContainer();
+			list<Recint> recints = recintContainer.getAll();
+			list<Staff> staff = container.getAll();
+			this->staffView.printStaffs(staff);
+			int number = Utils::getNumber("Enter the Staff Number");
+			Recint* oldRecint = recintContainer.get(number);
+			int zero = 0;
+			oldRecint->setStaff(zero);
+			this->recintView.printRecints(recints);
+			int recint = Utils::getNumber("Enter the new Recint Number");
+			Recint* newRecint = recintContainer.get(recint);
+			newRecint->setStaff(number);
 			container.move(number,recint);
+			this->staffView.printMove();
 		}
 		break;
 		case 3: {
