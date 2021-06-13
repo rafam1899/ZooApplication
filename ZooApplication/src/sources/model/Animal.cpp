@@ -16,6 +16,10 @@ Animal::Animal(const string& specie, const string& gender) {
 	this->cage = 0;
 }
 
+Animal::~Animal() {
+
+}
+
 void Animal::setCage(int& c) {
 	this->cage = c;
 }

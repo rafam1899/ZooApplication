@@ -65,14 +65,15 @@ void CageView::printRemoveCage(Cage *cage){
 void CageView::printCageAnimals(list<Animal>& animals, Cage cage) {
 
 	if(animals.empty()) {
-		cout << "\nCage capacity " << cage.getCapacity() << endl;
-		cout << "Number of animals inside " << cage.getNumAnimals() << endl;
+		cout << "\nRecint: " << cage.getRecint() << endl;
+		cout << "Cage capacity: " << cage.getCapacity() << endl;
+		cout << "Number of animals inside: " << cage.getNumAnimals() << endl;
 		cout << "\n** Cage has no animals inside **"<< endl;
 		return;
 	}
-
-	cout << "\nCage capacity " << cage.getCapacity() << endl;
-	cout << "Number of animals inside " << cage.getNumAnimals() << endl;
+	cout << "\nRecint: " << cage.getRecint() << endl;
+	cout << "Cage capacity: " << cage.getCapacity() << endl;
+	cout << "Number of animals inside: " << cage.getNumAnimals() << endl;
 	cout<< "\n ** List of animals inside cage **\n" << endl;
 
 	cout << "ID | SPECIE | GENDER" << endl;
@@ -82,3 +83,4 @@ void CageView::printCageAnimals(list<Animal>& animals, Cage cage) {
 	}
 
 }
+

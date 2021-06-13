@@ -19,6 +19,8 @@ class AnimalView {
 		void printAnimal(Animal *animal);
 		void printAnimals(list<Animal>& animals);
 		void printRemoveAnimal(Animal* animal, Cage* cage);
+		void printSucess(CageContainer &container, int cage);
+		void printError(string msg);
 };
 
 

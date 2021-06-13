@@ -24,6 +24,7 @@ class Animal {
 
 	public:
 		Animal(const string& specie, const string& gender);
+		~Animal();
 		int getNumber();
 		int getCage();
 		void setCage(int& cage);

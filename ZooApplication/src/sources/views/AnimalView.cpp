@@ -34,9 +34,7 @@ Animal AnimalView::getAnimal(CageContainer &container){
 			animal.setGender(gender);
 			animal.setSpecie(specie);
 			animal.setCage(nCage);
-			cout<<"** Animal created **"<<endl;
-			int numAnimals = container.get(nCage)->getNumAnimals() + 1;
-			container.get(nCage)->setNumAnimals(numAnimals);
+
 
 		}catch(InvalidDataException& e){
 			flag = true;
@@ -69,5 +67,16 @@ void AnimalView::printRemoveAnimal(Animal *animal, Cage *cage){
 	int num = cage->getNumAnimals() - 1;
 	cage->setNumAnimals(num);
 
+}
+
+void AnimalView::printSucess(CageContainer &container, int cage) {
+
+	int numAnimals = container.get(cage)->getNumAnimals() + 1;
+	container.get(cage)->setNumAnimals(numAnimals);
+	cout << "** Animal Added **" << endl;
+}
+
+void AnimalView::printError(string msg) {
+	cout << msg << endl;
 }
 
