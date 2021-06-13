@@ -10,9 +10,9 @@
 
 int Client::NUMBER = 0;
 
-
-Client::Client(Date& date) {
+Client::Client(int recint) {
 	this->number = ++NUMBER;
+	this->recintVisited = recint;
 
 }
 
@@ -22,4 +22,12 @@ Date Client::getDate() {
 
 void Client::setDate(int day, int month, int year) {
 	this->date;
+}
+
+int Client::getRecintVisited() {
+	return recintVisited;
+}
+
+void Client::setRecintVisited(int recint) {
+	this->recintVisited = recint;
 }

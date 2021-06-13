@@ -16,11 +16,14 @@ private:
 	Date date;
 	int number;
 	static int NUMBER;
+	int recintVisited;
 
 public:
-	Client(Date& date);
+	Client(int recint);
 	Date getDate();
 	void setDate(int day, int month, int year);
+	void setRecintVisited(int num);
+	int getRecintVisited();
 };
 
 

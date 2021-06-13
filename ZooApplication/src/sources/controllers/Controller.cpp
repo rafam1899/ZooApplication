@@ -302,13 +302,15 @@ void Controller::runStatistics(){
 	do{
 		op=this->view.menuStatistics();
 		switch(op){
-		case 1:
+		case 1: {
+			RecintContainer& container = this->zoo.getRecintContainer();
+			list<Recint> recints = container.getAll();
+			this->statisticsView.printVisitsPerRecint(recints);
+		}
 		break;
-		case 2:
-		break;
-		case 3:
-		break;
-		case 4:
+		case 2:{
+			this->statisticsView.printClientsPerDay();
+		}
 		break;
 		default:
 			break;

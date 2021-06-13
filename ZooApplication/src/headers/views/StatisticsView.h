@@ -17,8 +17,8 @@ class StatisticsView {
 public:
 
 	Client getClient(Client *client);
-	void printVisitsPerRecint(list<Recint>& recint);
-	void printClientsPerDay(list<Client>& clients);
+	void printVisitsPerRecint(list<Recint>& recints);
+	void printClientsPerDay();
 };
 
 
