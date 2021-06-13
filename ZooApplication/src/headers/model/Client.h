@@ -10,13 +10,17 @@
 
 #include "Date.h"
 
+
 class Client {
 private:
 	Date date;
 	int number;
+	static int NUMBER;
 
 public:
 	Client(Date& date);
+	Date getDate();
+	void setDate(int day, int month, int year);
 };
 
 
