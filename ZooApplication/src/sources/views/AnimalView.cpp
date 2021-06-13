@@ -84,3 +84,6 @@ void AnimalView::printError(string msg) {
 	cout << msg << endl;
 }
 
+void AnimalView::printMove() {
+	cout << "** Animal moved with sucess" << endl;
+}

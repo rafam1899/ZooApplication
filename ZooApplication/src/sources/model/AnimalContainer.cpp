@@ -64,10 +64,14 @@ void AnimalContainer::remove(int number){
 	}
 }
 
-void AnimalContainer::move(int number, int& cage){
+void AnimalContainer::move(int number, int& cage,Cage* oldCage, Cage* newCage){
 	list<Animal>::iterator it = search(number);
 	if(it != this->animals.end()){
 		it->setCage(cage);
+		int oldNum = oldCage->getNumAnimals() - 1;
+		oldCage->setNumAnimals(oldNum);
+		int newNum = newCage->getNumAnimals() + 1;
+		newCage->setNumAnimals(newNum);
 	}
 }
 

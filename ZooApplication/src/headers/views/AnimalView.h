@@ -21,6 +21,7 @@ class AnimalView {
 		void printRemoveAnimal(Animal* animal, Cage* cage);
 		void printSucess(CageContainer &container, int cage);
 		void printError(string msg);
+		void printMove();
 };
 
 

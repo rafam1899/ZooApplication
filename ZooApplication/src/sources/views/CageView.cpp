@@ -27,15 +27,18 @@ Cage CageView::getCage(RecintContainer &container){
 	do{
 
 		try{
-
-			flag = false;
-			cout<<"\n** Insert cage details **\n"<<endl;
-			int capacity = Utils::getNumber("Capacity");
-			cage.setCapacity(capacity);
-			recintView.printRecints(recints);
-			int recint = Utils::getNumber("Recint");
-			cage.setRecint(recint);
-			cout<<"** Cage created **"<<endl;
+			if(recints.empty()) {
+				cout<<"\n** Insert recints first **\n"<<endl;
+			} else {
+				flag = false;
+				cout<<"\n** Insert cage details **\n"<<endl;
+				int capacity = Utils::getNumber("Capacity");
+				cage.setCapacity(capacity);
+				recintView.printRecints(recints);
+				int recint = Utils::getNumber("Recint");
+				cage.setRecint(recint);
+				cout<<"** Cage created **"<<endl;
+			}
 
 
 		}catch(InvalidDataException& e){

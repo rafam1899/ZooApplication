@@ -64,11 +64,18 @@ void Controller::runAnimals(){
 
 		break;
 		case 2: {
-			int cage;
-			int number = Utils::getNumber("Enter the Animal Number");
-			string name =  Utils::getString("Enter the Animal Name");
 			AnimalContainer& container = this->zoo.getAnimalContainer();
-			container.move(number,cage);
+			CageContainer& cageContainer = this->zoo.getCageContainer();
+			list<Cage> cages = cageContainer.getAll();
+			list<Animal> animals = container.getAll();
+			this->animalView.printAnimals(animals);
+			int number = Utils::getNumber("Enter the Animal Number");
+			Cage* oldCage = cageContainer.get(number);
+			this->cageView.printCages(cages);
+			int cage = Utils::getNumber("Enter the new Cage Number");
+			Cage* newCage = cageContainer.get(cage);
+			container.move(number,cage,oldCage,newCage);
+			this->animalView.printMove();
 		}
 
 		break;
