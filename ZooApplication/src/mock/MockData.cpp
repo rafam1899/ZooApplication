@@ -2,7 +2,7 @@
  * MockData.cpp
  *
  *  Created on: 20/04/2021
- *      Author: pbs
+ *      Author: Rafael Moreira & Tiago Oliveira
  */
 
 #include "MockData.h"
@@ -13,7 +13,8 @@
 void  MockData::insertRecints(RecintContainer& container){
 	for (size_t  i = 0; i < this->recints.size();i++){
 		Recint obj(this->recints[i]);
-		obj.setVisits(i);
+		int num = (rand() % 1000) + 1;
+		obj.setVisits(num);
 		try{
 			container.add(obj);
 		}catch(DuplicatedDataException& e){
