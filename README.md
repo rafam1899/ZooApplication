@@ -1,2 +1,2 @@
-# fsoft2021_team_8
+# >ooApplication
 This repository holds the FSOFT project
